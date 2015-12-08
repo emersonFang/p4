@@ -49,3 +49,16 @@ Route::get('/debug', function() {
     echo '</pre>';
 
 });
+
+
+if(App::environment('local')) {
+
+    Route::get('/drop', function() {
+
+        DB::statement('DROP database yolo');
+        DB::statement('CREATE database yolo');
+
+        return 'Dropped yolo; created yolo.';
+    });
+
+};
