@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLandmarksTable extends Migration
+class CreateLandmarkTagPivotTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateLandmarksTable extends Migration
      */
     public function up()
     {
-        Schema::create('landmarks', function (Blueprint $table) {
+        Schema::create('landmark_tag', function (Blueprint $table) {
 
             # Increments method will make a Primary, Auto-Incrementing field.
             # Most tables start off this way
@@ -23,12 +23,14 @@ class CreateLandmarksTable extends Migration
             $table->timestamps();
 
             # The rest of the fields...
-            $table->string('name');
-            $table->text('description');
-            $table->text('location');
-            #$table->foreign('')
-            #    ->references('id')->on('users')
-            #    ->onDelete('cascade');
+            $table->integer('landmark_id');
+            $table->integer('tag_id');
+            $table->foreign('landmark_id')
+                ->references('id')->on('landmarks')
+                ->onDelete('cascade');
+            $table->foreign('tag_id')
+                ->references('id')->on('tags')
+                ->onDelete('cascade');
 
             # FYI: We're skipping the 'tags' field for now; more on that later.
 
@@ -42,6 +44,6 @@ class CreateLandmarksTable extends Migration
      */
     public function down()
     {
-        Schema::drop('landmarks');
+        //
     }
 }

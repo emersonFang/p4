@@ -62,3 +62,10 @@ if(App::environment('local')) {
     });
 
 };
+
+
+Route::get('/workspace', function() {
+
+
+
+});

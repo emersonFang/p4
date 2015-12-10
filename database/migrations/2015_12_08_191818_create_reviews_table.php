@@ -23,7 +23,6 @@ class CreateReviewsTable extends Migration
             $table->timestamps();
 
             # The rest of the fields...
-            $table->string('file_path');
             $table->longText('review');
         });
     }
