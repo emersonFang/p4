@@ -20,10 +20,10 @@ class LandmarkTagTableSeeder extends Seeder
         ];
 
         # Now loop through the above array, creating a new pivot for each book to tag
-        foreach($landmarks as $landmarkname => $tags) {
+        foreach($landmarks as $landmark => $tags) {
 
             # First get the landmark
-            $landmark = \App\Landmark::where('name','like',$landmarkname)->first();
+            $landmark = \App\Landmark::where('id','like',$landmark)->first();
 
             # Now loop through each tag for this landmark, adding the pivot
             foreach($tags as $tagName) {
