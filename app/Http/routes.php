@@ -66,6 +66,10 @@ if(App::environment('local')) {
 
 Route::get('/workspace', function() {
 
+    $landmark = \App\Landmark::find(1);
 
+    $tags = $landmark->tags;
+
+     dd($tags);
 
 });

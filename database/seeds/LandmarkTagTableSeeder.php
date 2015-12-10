@@ -12,22 +12,22 @@ class LandmarkTagTableSeeder extends Seeder
     public function run()
     {
         # First, create an array of all the landmarks we want to associate tags with
-        # The *key* will be the landmark name, and the *value* will be an array of tags.
+        # The *key* will be the landmark id, and the *value* will be an array of tags.
         $landmarks =[
-            'Zakim Bridge' => ['bridge','metallic','large','scenic'],
-            'Boston Chinatown Gate' => ['ethnic','Chinese','gate','large'],
-            'John Harvard Statue' => ['statue','Harvard','academic','metallic']
+            '1' => ['bridge','metallic','large','scenic'],
+            '2' => ['ethnic','Chinese','gate','large'],
+            '3' => ['statue','Harvard','academic','metallic']
         ];
 
         # Now loop through the above array, creating a new pivot for each book to tag
         foreach($landmarks as $landmarkname => $tags) {
 
-            # First get the book
+            # First get the landmark
             $landmark = \App\Landmark::where('name','like',$landmarkname)->first();
 
-            # Now loop through each tag for this book, adding the pivot
+            # Now loop through each tag for this landmark, adding the pivot
             foreach($tags as $tagName) {
-                $tag = \App\Tag::where('name','LIKE',$tagName)->first();
+                $tag = \App\Tag::where('tag','LIKE',$tagName)->first();
 
                 # Connect this tag to this book
                 $landmark->tags()->save($tag);

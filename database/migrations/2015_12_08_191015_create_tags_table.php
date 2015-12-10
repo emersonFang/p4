@@ -23,7 +23,7 @@ class CreateTagsTable extends Migration
             $table->timestamps();
 
             # The rest of the fields...
-            $table->unique('tag');
+            $table->string('tag')->unique();
         });
     }
 

@@ -77,7 +77,7 @@ class TagsTableSeeder extends Seeder
 
         foreach($data as $tagName) {
             $tag = new \App\Tag();
-            $tag->name = $tagName;
+            $tag->tag = $tagName;
             $tag->save();
         }
     }
