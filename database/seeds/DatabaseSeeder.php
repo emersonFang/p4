@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PhotosTableSeeder::class);
         #$this->call(ReviewsTableSeeder::class);
         $this->call(TagsTableSeeder::class);
-
+        $this->call(LandmarkTagTableSeeder::class);
         Model::reguard();
     }
 }
