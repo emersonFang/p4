@@ -23,7 +23,7 @@ class CreateLandmarksTable extends Migration
             $table->timestamps();
 
             # The rest of the fields...
-            $table->string('name');
+            $table->unique('name');
             $table->text('description');
             $table->text('location');
             #$table->foreign('')

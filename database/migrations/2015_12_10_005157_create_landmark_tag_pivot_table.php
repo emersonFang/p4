@@ -23,8 +23,8 @@ class CreateLandmarkTagPivotTable extends Migration
             $table->timestamps();
 
             # The rest of the fields...
-            $table->integer('landmark_id');
-            $table->integer('tag_id');
+            $table->integer('landmark_id')->unsigned();
+            $table->integer('tag_id')->unsigned();
             $table->foreign('landmark_id')
                 ->references('id')->on('landmarks')
                 ->onDelete('cascade');
@@ -32,7 +32,6 @@ class CreateLandmarkTagPivotTable extends Migration
                 ->references('id')->on('tags')
                 ->onDelete('cascade');
 
-            # FYI: We're skipping the 'tags' field for now; more on that later.
 
         });
     }
@@ -44,6 +43,6 @@ class CreateLandmarkTagPivotTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('landmark_tag');
     }
 }

@@ -11,6 +11,7 @@ class TagsTableSeeder extends Seeder
      */
     public function run()
     {
+        /*
         DB::table('tags')->insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -70,5 +71,14 @@ class TagsTableSeeder extends Seeder
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
             'tag' => 'large',
         ]);
+        */
+
+        $data = ['ethnic','bridge','statue','metallic','Harvard','scenic','gate', 'academic', 'Chinese', 'large'];
+
+        foreach($data as $tagName) {
+            $tag = new \App\Tag();
+            $tag->name = $tagName;
+            $tag->save();
+        }
     }
 }
