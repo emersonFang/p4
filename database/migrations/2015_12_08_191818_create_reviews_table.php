@@ -22,6 +22,11 @@ class CreateReviewsTable extends Migration
             # keep track of changes to a row
             $table->timestamps();
 
+            $table->integer('landmark_id')->unsigned();
+            $table->foreign('landmark_id')
+                ->references('id')->on('landmarks')
+                ->onDelete('cascade');
+
             # The rest of the fields...
             $table->longText('review');
 

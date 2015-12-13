@@ -16,6 +16,7 @@ class PhotosTableSeeder extends Seeder
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
             'filepath' => 'https://upload.wikimedia.org/wikipedia/commons/8/8c/Leonard_P._Zakim_Bunker_Hill_Bridge_-_Boston%2C_MA_crop.jpg',
             'description' => 'Awesome Zakim Bridge Pic',
+            'landmark_id'=> '1',
             'user_id' => '1',
         ]);
 
@@ -24,6 +25,7 @@ class PhotosTableSeeder extends Seeder
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
             'filepath' => 'http://www.zakim-bridge.com/files/SN-images/Zakim_Bridge_night.jpg',
             'description' => 'Okay Zakim Bridge Pic',
+            'landmark_id'=> '1',
             'user_id' => '1',
         ]);
 
@@ -32,6 +34,7 @@ class PhotosTableSeeder extends Seeder
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
             'filepath' => 'http://cache.boston.com/bonzai-fba/Globe_Photo/2011/05/10/ch-01__1305055431_9156.jpg',
             'description' => 'Boston Chinatown Gate Pic1',
+            'landmark_id'=> '2',
             'user_id' => '2',
         ]);
 
@@ -40,6 +43,7 @@ class PhotosTableSeeder extends Seeder
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
             'filepath' => 'http://cdn1.bostonmagazine.com/wp-content/uploads/2013/01/fea_food_chinatown2.jpg',
             'description' => 'Boston Chinatown Gate Pic2',
+            'landmark_id'=> '2',
             'user_id' => '2',
         ]);
 
@@ -48,6 +52,7 @@ class PhotosTableSeeder extends Seeder
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
             'filepath' => 'https://upload.wikimedia.org/wikipedia/commons/e/e0/John_Harvard_Statue.JPG',
             'description' => 'John Harvard Statue Pic1',
+            'landmark_id'=> '3',
             'user_id' => '1',
         ]);
 
@@ -56,6 +61,7 @@ class PhotosTableSeeder extends Seeder
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
             'filepath' => 'https://upload.wikimedia.org/wikipedia/commons/4/4e/John_Harvard_statue.jpg',
             'description' => 'John Harvard Statue Pic2',
+            'landmark_id'=> '3',
             'user_id' => '1',
         ]);
     }
