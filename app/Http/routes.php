@@ -113,3 +113,5 @@ Route::group(['middleware' => 'auth'], function() {
 });
 
 Route::resource('tag', 'TagController');
+
+?>
