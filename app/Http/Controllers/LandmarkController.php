@@ -14,13 +14,18 @@ class LandmarkController extends Controller {
      * Responds to requests to GET /landmark
      */
     public function getIndex() {
-        return view('landmarks.list_all');
+        // Get all the books "owned" by the current logged in users
+        // Sort in descending order by id
+        $landmarks = \App\Landmark::where('user_id','=',\Auth::id())->orderBy('id','DESC')->get();
+        return view('landmarks.index')->with('landmarks',$landmarks);
+
+        //return view('landmarks.list_all');
     }
 
     /**
      * Responds to requests to GET /landmarks/show/{id}
      */
-    public function getShow($name) {
+    public function getShow($name= null) {
         return view('landmarks.show')->with('name',$name);
     }
 

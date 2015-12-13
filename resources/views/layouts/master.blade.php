@@ -11,8 +11,6 @@
     <title>@yield('title')</title>
 
 
-
-
     <!-- Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <!-- Optional theme -->
@@ -24,29 +22,40 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
-
-
+    <link href="/css/yolo.css" type='text/css' rel='stylesheet'>
     <!-- per-page styles -->
     @yield('styles')
 
 
-
-
-
 </head>
+
 <body>
+    <header>
+        <img
+                src=''
+                style='width:300px'
+                alt='Yolo Logo'>
+    </header>
+
+    <section>
+
+    @yield('content')
+
+    </section>
 
 
+    <footer>
+        &copy; {{ date('Y') }}
+        {!!" by Emerson Fang"!!}
+    </footer>
 
-@yield('content')
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 
-
-
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
+
+
 </html>
