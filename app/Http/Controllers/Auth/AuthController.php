@@ -44,6 +44,7 @@ class AuthController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
+
     {
         return Validator::make($data, [
             'name' => 'required|max:255',

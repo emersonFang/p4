@@ -4,8 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
-use Illuminate\Session;
-use Illuminate\Validation;
+use Session;
 
 class Authenticate
 {
