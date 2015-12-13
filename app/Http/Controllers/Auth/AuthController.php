@@ -32,11 +32,6 @@ class AuthController extends Controller
 # Where should the user be redirected to after logging out?
     protected $redirectAfterLogout = '/';
 
-    /**
-     * Create a new authentication controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'getLogout']);
