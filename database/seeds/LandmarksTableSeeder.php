@@ -16,7 +16,8 @@ class LandmarksTableSeeder extends Seeder
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
             'name' => 'Zakim Bridge',
             'description' => 'A bridge that goes over the Charles River',
-            'location' => 'Somewhere in Boston'
+            'location' => 'Somewhere in Boston',
+            'user_id' => '1',
         ]);
 
         DB::table('landmarks')->insert([
@@ -25,6 +26,7 @@ class LandmarksTableSeeder extends Seeder
             'name' => 'Boston Chinatown Gate',
             'description' => 'A gate donated to Downtown Boston from Taiwan',
             'location' => 'Mainstreet Chinatown, Boston',
+            'user_id' => '2',
         ]);
 
         DB::table('landmarks')->insert([
@@ -33,6 +35,7 @@ class LandmarksTableSeeder extends Seeder
             'name' => 'John Harvard Statue',
             'description' => 'It is not really John Harvard',
             'location' => 'Harvard Yard, Harvard University',
+            'user_id' => '1',
         ]);
     }
 }

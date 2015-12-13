@@ -24,6 +24,11 @@ class CreateReviewsTable extends Migration
 
             # The rest of the fields...
             $table->longText('review');
+
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')
+                ->references('id')->on('users')
+                ->onDelete('cascade');
         });
     }
 

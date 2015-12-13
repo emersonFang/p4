@@ -26,9 +26,10 @@ class CreateLandmarksTable extends Migration
             $table->string('name')->unique();
             $table->text('description');
             $table->text('location');
-            #$table->foreign('')
-            #    ->references('id')->on('users')
-            #    ->onDelete('cascade');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')
+                ->references('id')->on('users')
+                ->onDelete('cascade');
 
             # FYI: We're skipping the 'tags' field for now; more on that later.
 
