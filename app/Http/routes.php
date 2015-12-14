@@ -111,6 +111,18 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/landmarks', 'LandmarkController@getIndex');
     Route::get('/landmarks/show/{id?}', 'LandmarkController@getShow');
     Route::post('/landmarks/show/{id?}', 'LandmarkController@getShow');
+
+    Route::get('/reviews/{id?}/create', 'ReviewController@getCreate');
+    Route::post('/reviews/{id?}/create', 'ReviewController@postCreate');
+
+    Route::get('/reviews/edit/{id?}', 'ReviewController@getEdit');
+    Route::post('/reviews/edit', 'ReviewController@postEdit');
+
+    Route::get('/reviews/confirm-delete/{id?}', 'ReviewController@getConfirmDelete');
+    Route::get('/reviews/delete/{id?}', 'ReviewController@getDoDelete');
+
+    Route::get('/reviews/show/{id}', 'ReviewController@getIndex');
+
 });
 
 Route::resource('tag', 'TagController');

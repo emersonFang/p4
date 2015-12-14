@@ -16,8 +16,8 @@
             <h1>Showing reviews for: <br> {{ $landmark->name }}</h1>
                 <div class="centered_text">
                     @if(Auth::check())
-                        <a href='/reviews/create'>Add a review</a> |
-                        <a href='/photos/create'>Add a photo</a>
+                        <a href='/reviews/{{$landmark->id}}/create'>Add a review</a> |
+                        <a href='/photos/{{$landmark->id}}/create'>Add a photo</a>
                     @else
                     @endif
                 </div>

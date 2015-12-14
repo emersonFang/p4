@@ -32,9 +32,9 @@
 <body>
     <header>
         <img
-                src=''
-                style='width:300px'
-                alt='Yolo Logo'>
+                class="title"
+                src="/images/p4_logo.png"
+                alt='Yolo App logo'>
     </header>
 
     <br>
