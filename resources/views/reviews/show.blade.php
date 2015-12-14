@@ -9,7 +9,10 @@
 
 @section('content')
     <?php
-    $photos = \App\Photo::where('landmark_id','=',$landmark->id)->orderBy(DB::raw('RAND()'))->take(1)->get();
+
+
+    $reviews = \App\Review::where('landmark_id','=',$landmark->id)->first()->get();
+    dd($reviews);
     foreach($photos as $photo) {
         $filepath = $photo['filepath'];
     };?>

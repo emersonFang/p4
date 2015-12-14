@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d5aae19-a827-4c2d-a3e5-974473104c7f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ReviewController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReviewController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/landmarks/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/landmarks/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/landmarks/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/landmarks/show.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/reviews/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/reviews/show.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/yolo.css" afterPath="$PROJECT_DIR$/public/css/yolo.css" />
     </list>
     <ignored path="p4.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,21 +34,31 @@
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-8.230769">
-              <caret line="123" column="66" selection-start-line="123" selection-start-column="66" selection-end-line="123" selection-end-column="66" />
+              <caret line="123" column="62" selection-start-line="123" selection-start-column="62" selection-end-line="123" selection-end-column="62" />
               <folding>
                 <element signature="e#7#392#0#PHP" expanded="true" />
-                <marker date="1450113509519" expanded="true" signature="1677:1713" placeholder="..." />
-                <marker date="1450113509519" expanded="true" signature="1904:1942" placeholder="..." />
+                <marker date="1450126008696" expanded="true" signature="1677:1713" placeholder="..." />
+                <marker date="1450126008696" expanded="true" signature="1904:1942" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="master.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="master.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/master.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5448718">
-              <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+            <state vertical-scroll-proportion="-22.692308">
+              <caret line="84" column="7" selection-start-line="84" selection-start-column="7" selection-end-line="84" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="welcome.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-22.692308">
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -60,8 +74,8 @@
       <file leaf-file-name="LandmarkController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LandmarkController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.846154">
-              <caret line="48" column="45" selection-start-line="48" selection-start-column="45" selection-end-line="48" selection-end-column="45" />
+            <state vertical-scroll-proportion="-5.9423075">
+              <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
               <folding>
                 <element signature="e#40#76#0#PHP" expanded="true" />
               </folding>
@@ -69,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReviewController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ReviewController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ReviewController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.115385">
-              <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.536859">
+              <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
               <folding>
                 <element signature="e#40#76#0#PHP" expanded="true" />
               </folding>
@@ -84,8 +98,8 @@
       <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/reviews/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-7.1923075">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#div#1;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#2;n#html#0;n#!!top" expanded="true" />
@@ -97,14 +111,14 @@
       <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/landmarks/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.692308">
-              <caret line="48" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="48" selection-end-column="7" />
+            <state vertical-scroll-proportion="-9.807693">
+              <caret line="18" column="63" selection-start-line="18" selection-start-column="63" selection-end-line="18" selection-end-column="63" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#div#1;n#html#0;n#!!top" expanded="true" />
-                <marker date="1450109722658" expanded="true" signature="1376:1471" placeholder="..." />
-                <marker date="1450109722658" expanded="true" signature="1516:1534" placeholder="..." />
-                <marker date="1450109722658" expanded="true" signature="1568:1625" placeholder="..." />
-                <marker date="1450109722658" expanded="true" signature="1568:1753" placeholder="..." />
+                <marker date="1450125990776" expanded="true" signature="1657:1752" placeholder="..." />
+                <marker date="1450125990776" expanded="true" signature="1797:1815" placeholder="..." />
+                <marker date="1450125990776" expanded="true" signature="1849:1906" placeholder="..." />
+                <marker date="1450125990776" expanded="true" signature="1849:2034" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -114,24 +128,8 @@
         <entry file="file://$PROJECT_DIR$/public/css/yolo.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="220" column="0" selection-start-line="220" selection-start-column="0" selection-end-line="220" selection-end-column="0" />
+              <caret line="239" column="1" selection-start-line="239" selection-start-column="1" selection-end-line="239" selection-end-column="1" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list_all.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/landmarks/list_all.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.461538">
-              <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1450103772034" expanded="true" signature="357:375" placeholder="..." />
-                <marker date="1450103772034" expanded="true" signature="407:606" placeholder="..." />
-                <marker date="1450103772034" expanded="true" signature="551:606" placeholder="..." />
-                <marker date="1450103772034" expanded="true" signature="853:889" placeholder="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -140,7 +138,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/landmarks/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-9.807693">
-              <caret line="15" column="57" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="57" />
+              <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -197,16 +195,16 @@
         <option value="$PROJECT_DIR$/resources/views/landmarks/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/landmarks/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/landmarks/delete.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/landmarks/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Review.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/LandmarkController.php" />
         <option value="$PROJECT_DIR$/resources/views/landmarks/list_all.blade.php" />
         <option value="$PROJECT_DIR$/public/css/yolo.css" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/master.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/landmarks/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/landmarks/show.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/reviews/show.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ReviewController.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/master.blade.php" />
       </list>
     </option>
   </component>
@@ -764,10 +762,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22913617" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22913617" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -996,14 +994,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-21.076923">
@@ -1156,83 +1146,10 @@
           <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
           <folding>
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1450103772034" expanded="true" signature="357:375" placeholder="..." />
-            <marker date="1450103772034" expanded="true" signature="407:606" placeholder="..." />
-            <marker date="1450103772034" expanded="true" signature="551:606" placeholder="..." />
-            <marker date="1450103772034" expanded="true" signature="853:889" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/yolo.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="220" column="0" selection-start-line="220" selection-start-column="0" selection-end-line="220" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/landmarks/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.807693">
-          <caret line="15" column="57" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.230769">
-          <caret line="123" column="66" selection-start-line="123" selection-start-column="66" selection-end-line="123" selection-end-column="66" />
-          <folding>
-            <element signature="e#7#392#0#PHP" expanded="true" />
-            <marker date="1450113509519" expanded="true" signature="1677:1713" placeholder="..." />
-            <marker date="1450113509519" expanded="true" signature="1904:1942" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LandmarkController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.846154">
-          <caret line="48" column="45" selection-start-line="48" selection-start-column="45" selection-end-line="48" selection-end-column="45" />
-          <folding>
-            <element signature="e#40#76#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/landmarks/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.692308">
-          <caret line="48" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="48" selection-end-column="7" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#1;n#html#0;n#!!top" expanded="true" />
-            <marker date="1450109722658" expanded="true" signature="1376:1471" placeholder="..." />
-            <marker date="1450109722658" expanded="true" signature="1516:1534" placeholder="..." />
-            <marker date="1450109722658" expanded="true" signature="1568:1625" placeholder="..." />
-            <marker date="1450109722658" expanded="true" signature="1568:1753" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/reviews/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#1;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ReviewController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.115385">
-          <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
-          <folding>
-            <element signature="e#40#76#0#PHP" expanded="true" />
+            <marker date="1450103772034" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1450103772034" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1450103772034" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1450103772034" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1242,11 +1159,92 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.692308">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/yolo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="239" column="1" selection-start-line="239" selection-start-column="1" selection-end-line="239" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/landmarks/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/master.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5448718">
-          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+        <state vertical-scroll-proportion="-22.692308">
+          <caret line="84" column="7" selection-start-line="84" selection-start-column="7" selection-end-line="84" selection-end-column="7" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.230769">
+          <caret line="123" column="62" selection-start-line="123" selection-start-column="62" selection-end-line="123" selection-end-column="62" />
+          <folding>
+            <element signature="e#7#392#0#PHP" expanded="true" />
+            <marker date="1450126008696" expanded="true" signature="1677:1713" placeholder="..." />
+            <marker date="1450126008696" expanded="true" signature="1904:1942" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/reviews/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1923075">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#1;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/landmarks/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="18" column="63" selection-start-line="18" selection-start-column="63" selection-end-line="18" selection-end-column="63" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#1;n#html#0;n#!!top" expanded="true" />
+            <marker date="1450125990776" expanded="true" signature="1657:1752" placeholder="..." />
+            <marker date="1450125990776" expanded="true" signature="1797:1815" placeholder="..." />
+            <marker date="1450125990776" expanded="true" signature="1849:1906" placeholder="..." />
+            <marker date="1450125990776" expanded="true" signature="1849:2034" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LandmarkController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.9423075">
+          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+          <folding>
+            <element signature="e#40#76#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ReviewController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.536859">
+          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+          <folding>
+            <element signature="e#40#76#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

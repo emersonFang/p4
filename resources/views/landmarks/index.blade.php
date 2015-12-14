@@ -13,7 +13,7 @@
         @foreach($landmarks as $landmark)
             <div style="text-align: center" class="user_results_container">
                 <h2>{{ $landmark->name }}</h2>
-                <a href='landmarks/show/{{$landmark->id}}'>Reviews</a> |
+                <a href='landmarks/show/{{$landmark->id}}'>About</a> |
                 <a href='/landmarks/edit/{{$landmark->id}}'>Edit</a> |
                 <a href='/landmarks/confirm-delete/{{$landmark->id}}'>Delete</a>
                 <div class="outer">

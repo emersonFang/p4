@@ -121,7 +121,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/reviews/confirm-delete/{id?}', 'ReviewController@getConfirmDelete');
     Route::get('/reviews/delete/{id?}', 'ReviewController@getDoDelete');
 
-    Route::get('/reviews/show/{id}', 'ReviewController@getIndex');
+    Route::get('/reviews/show/{id}', 'ReviewController@getShow');
 
 });
 

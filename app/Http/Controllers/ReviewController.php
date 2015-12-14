@@ -18,7 +18,7 @@ class ReviewController extends Controller {
         // Get all the reviews "owned" by the current logged in user
         // Sort in descending order by id
         $landmarks = \App\Landmark::where('user_id','=',\Auth::id())->orderBy('id','DESC')->get();
-        return view('landmarks.index')->with('landmarks',$landmarks);
+        return view('reviews.index')->with('landmarks',$landmarks);
 
         //return view('landmarks.list_all');
     }
@@ -33,13 +33,13 @@ class ReviewController extends Controller {
      * Responds to requests to GET /review/show/{id}, shows reviews that are specific to the user for a specific landmark
      */
     public function getShow($id= null) {
-        $landmark = \App\Landmark::all();
+        $landmark = \App\Landmark::find($id);
 
         if(is_null($landmark)) {
             \Session::flash('flash_message','Landmark not found.');
             return redirect('\landmarks');
         }
-        return view('landmark.show')->with('landmark',$landmark);
+        return view('reviews.show')->with('landmark',$landmark);
     }
 
 

@@ -13,17 +13,22 @@
                 foreach($photos as $photo) {
                     $filepath = $photo['filepath'];
             };?>
-            <h1>Showing reviews for: <br> {{ $landmark->name }}</h1>
+            <h1> {{ $landmark->name }}</h1>
                 <div class="centered_text">
                     @if(Auth::check())
+                        <a href='/reviews/show/{{$landmark->id}}'>Your reviews of {{$landmark->name}}</a> |
                         <a href='/reviews/{{$landmark->id}}/create'>Add a review</a> |
                         <a href='/photos/{{$landmark->id}}/create'>Add a photo</a>
                     @else
                     @endif
                 </div>
-            <div class="image">
-                <img style='width:20%' src={{$filepath}}>
-            </div>
+                <div class="image">
+                    <img style='width:20%' src={{$filepath}}>
+                </div>
+                <div class="centered_text">
+                    Location: {{$landmark->location}} <br>
+                    Description: {{$landmark->description}}
+                </div>
             <?php $reviews = \App\Review::where('landmark_id','=',$landmark->id)->orderBy('id')->get();?>
             @if(empty($reviews->first()))
                 <h2>No Reviews (Yet!)</h2>
