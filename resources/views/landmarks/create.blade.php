@@ -58,12 +58,22 @@ such as a page specific styesheets.
             </div>
 
             <div class='form-group'>
-                <label for='photo'>*URL for a photo of the landmark:</label>
+                <label for='filepath'>*URL for a photo of the landmark:</label>
                 <input
                         type='text'
                         id='filepath'
                         name='filepath'
                         value='{{ old('filepath','https://upload.wikimedia.org/wikipedia/commons/0/0c/GoldenGateBridge-001.jpg') }}'
+                        >
+            </div>
+
+            <div class='form-group'>
+                <label for='photo_description'>*Short Description of Landmark Photo:</label>
+                <input
+                        type='text'
+                        id='photo_description'
+                        name='photo_description'
+                        value='{{ old('photo_description','Golden Gate Bridge Pic') }}'
                         >
             </div>
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class LandmarkController extends Controller {
 
@@ -57,6 +58,8 @@ class LandmarkController extends Controller {
                 'name' => 'required|min:5',
                 'description' => 'required|min:1',
                 'location' => 'required|min:1',
+                'filepath' => 'required|url',
+                'photo_description' => 'required|min:1'
             ]
         );
 
@@ -67,8 +70,13 @@ class LandmarkController extends Controller {
         $landmark->location = $request->location;
         $landmark->user_id = \Auth::id(); # <--- NEW LINE
 
-
         $landmark->save();
+
+        $photo = new \App\Photo();
+        $photo->filepath = $request->filepath;
+        $photo->photo_description = $request->photo_description;
+        $photo->landmark_id = $landmark->id;
+        $photo->user_id = \Auth::id();
 
         # Add the tags
         if ($request->tags) {

@@ -24,7 +24,7 @@ class CreatePhotosTable extends Migration
 
             # The rest of the fields...
             $table->string('filepath');
-            $table->text('description');
+            $table->text('photo_description');
             $table->integer('landmark_id')->unsigned();
             $table->foreign('landmark_id')
                 ->references('id')->on('landmarks')

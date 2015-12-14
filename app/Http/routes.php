@@ -101,10 +101,13 @@ Route::get('/confirm-login-worked', function() {
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/landmarks/create', 'LandmarkController@getCreate');
     Route::post('/landmarks/create', 'LandmarkController@postCreate');
+
     Route::get('/landmarks/edit/{id?}', 'LandmarkController@getEdit');
     Route::post('/landmarks/edit', 'LandmarkController@postEdit');
+
     Route::get('/landmarks/confirm-delete/{id?}', 'LandmarkController@getConfirmDelete');
     Route::get('/landmarks/delete/{id?}', 'LandmarkController@getDoDelete');
+
     Route::get('/landmarks', 'LandmarkController@getIndex');
     Route::get('/landmarks/show/{name?}', 'LandmarkController@getShow');
 });
