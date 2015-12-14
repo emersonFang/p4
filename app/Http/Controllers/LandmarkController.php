@@ -65,7 +65,7 @@ class LandmarkController extends Controller {
 
         # Enter landmark and its photo into the database
         $landmark = new \App\Landmark();
-        $landmark->title = $request->name;
+        $landmark->name = $request->name;
         $landmark->description = $request->description;
         $landmark->location = $request->location;
         $landmark->user_id = \Auth::id(); # <--- NEW LINE
@@ -77,6 +77,8 @@ class LandmarkController extends Controller {
         $photo->photo_description = $request->photo_description;
         $photo->landmark_id = $landmark->id;
         $photo->user_id = \Auth::id();
+
+        $photo->save();
 
         # Add the tags
         if ($request->tags) {

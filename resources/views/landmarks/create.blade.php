@@ -41,9 +41,9 @@ such as a page specific styesheets.
                 <label for='description'>*Landmark's Description:</label>
                 <input
                         type='text'
-                        id='name'
-                        name='name'
-                        value='{{ old('name','The prettiest bridge ever!') }}'
+                        id='description'
+                        name='description'
+                        value='{{ old('description','The prettiest bridge ever!') }}'
                         >
             </div>
 
@@ -53,7 +53,7 @@ such as a page specific styesheets.
                         type='text'
                         id='location'
                         name='location'
-                        value='{{ old('name','San Francisco') }}'
+                        value='{{ old('location','San Francisco') }}'
                         >
             </div>
 
