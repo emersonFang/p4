@@ -29,17 +29,59 @@ class LandmarkController extends Controller {
         return view('landmarks.show')->with('name',$name);
     }
 
+
     /**
      * Responds to requests to GET /landmarks/create
      */
     public function getCreate() {
-        return 'Form to create a new landmark';
+
+        $LandmarkModel = new \App\Landmark();
+
+        # Get all the possible tags so we can include them with checkboxes in the view
+        $tagModel = new \App\Tag();
+        $tags_for_checkbox = $tagModel->getTagsForCheckboxes();
+
+        return view('landmarks.create')
+            ->with('tags_for_checkbox',$tags_for_checkbox);
     }
 
     /**
-     * Responds to requests to POST /landmarks/create
+     * Responds to requests to POST /landmark/create
      */
-    public function postCreate() {
-        return 'Process adding new landmark';
+    public function postCreate(Request $request)
+    {
+
+        $this->validate(
+            $request,
+            [
+                'name' => 'required|min:5',
+                'description' => 'required|min:1',
+                'location' => 'required|min:1',
+            ]
+        );
+
+        # Enter landmark and its photo into the database
+        $landmark = new \App\Landmark();
+        $landmark->title = $request->name;
+        $landmark->description = $request->description;
+        $landmark->location = $request->location;
+        $landmark->user_id = \Auth::id(); # <--- NEW LINE
+
+
+        $landmark->save();
+
+        # Add the tags
+        if ($request->tags) {
+            $tags = $request->tags;
+        } else {
+            $tags = [];
+        }
+        $landmark->tags()->sync($tags);
+
+        # Done
+        \Session::flash('flash_message', 'Your landmark was added!');
+        return redirect('/landmarks');
+
     }
+
 }

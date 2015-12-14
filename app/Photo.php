@@ -13,4 +13,12 @@ class Photo extends Model
 
 
     }
+
+    public function landmark()
+    {
+
+        return $this->belongsTo('Landmark');
+
+
+    }
 }
