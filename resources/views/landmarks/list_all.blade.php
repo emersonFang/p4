@@ -16,6 +16,7 @@
         @foreach($landmarks as $landmark)
             <div style="text-align: center" class="user_results_container">
                 <h2>{{ $landmark->name }}</h2>
+                <a href='show/{{$landmark->id}}'>Reviews</a>
                 <div class="outer">
                     <?php $photos = \App\Photo::where('landmark_id','=',$landmark->id)->orderBy(DB::raw('RAND()'))->take(1)->get();
                     foreach($photos as $photo) {

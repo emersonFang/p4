@@ -31,8 +31,13 @@ class LandmarkController extends Controller {
      * Responds to requests to GET /landmarks/show/{id}
      */
     public function getShow($id= null) {
+        $landmark = \App\Landmark::with('tags')->find($id);
 
-        return view('landmarks.show')->with('id',$id);
+        if(is_null($landmark)) {
+            \Session::flash('flash_message','Landmark not found.');
+            return redirect('\landmarks');
+        }
+        return view('landmarks.show')->with('landmark',$landmark);
     }
 
 

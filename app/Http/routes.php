@@ -110,6 +110,7 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::get('/landmarks', 'LandmarkController@getIndex');
     Route::get('/landmarks/show/{id?}', 'LandmarkController@getShow');
+    Route::post('/landmarks/show/{id?}', 'LandmarkController@getShow');
 });
 
 Route::resource('tag', 'TagController');
