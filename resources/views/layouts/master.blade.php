@@ -37,6 +37,8 @@
                 alt='Yolo Logo'>
     </header>
 
+    <br>
+
     @if(\Session::has('flash_message'))
         <div class='flash_message'>
             {{ \Session::get('flash_message') }}
@@ -46,11 +48,13 @@
     <nav>
         <ul>
             @if(Auth::check())
-                <li><a href='/'>Home</a></li>
+                <li><a href='/'>Home (View Your Landmarks)</a></li>
+                <li><a href='/landmarks/all'>View all users' landmarks</a></li>
                 <li><a href='/landmarks/create'>Add a landmark</a></li>
                 <li><a href='/logout'>Log out {{ $user->name }}</a></li>
             @else
                 <li><a href='/'>Home</a></li>
+                <li><a href='/landmarks/all'>View all landmarks</a></li>
                 <li><a href='/login'>Log in</a></li>
                 <li><a href='/register'>Register</a></li>
             @endif

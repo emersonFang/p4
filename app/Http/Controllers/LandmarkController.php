@@ -23,6 +23,10 @@ class LandmarkController extends Controller {
         //return view('landmarks.list_all');
     }
 
+    public function getAllLandmarks() {
+        return view('landmarks.list_all');
+    }
+
     /**
      * Responds to requests to GET /landmarks/show/{id}
      */
@@ -153,5 +157,42 @@ class LandmarkController extends Controller {
         return redirect('/landmarks/edit/'.$request->id);
 
     }
+
+
+
+    /**
+     *
+     */
+    public function getConfirmDelete($landmark_id) {
+
+        $landmark = \App\Landmark::find($landmark_id);
+
+        return view('landmarks.delete')->with('landmark', $landmark);
+    }
+
+    /**
+     *
+     */
+    public function getDoDelete($landmark_id) {
+
+        $landmark = \App\Landmark::find($landmark_id);
+
+        if(is_null($landmark)) {
+            \Session::flash('flash_message','Landmark not found.');
+            return redirect('\landmarks');
+        }
+
+        if($landmark->tags()) {
+            $landmark->tags()->detach();
+        }
+
+        $landmark->delete();
+
+        \Session::flash('flash_message',$landmark->name.' was deleted.');
+
+        return redirect('/landmarks');
+
+    }
+
 
 }

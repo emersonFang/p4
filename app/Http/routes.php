@@ -114,4 +114,6 @@ Route::group(['middleware' => 'auth'], function() {
 
 Route::resource('tag', 'TagController');
 
+Route::get('/landmarks/all', 'LandmarkController@getAllLandmarks');
+
 ?>
