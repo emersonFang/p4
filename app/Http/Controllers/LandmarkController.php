@@ -15,11 +15,8 @@ class LandmarkController extends Controller {
      */
     public function getIndex() {
         // Get all the landmarks "owned" by the current logged in users
-        // Sort in descending order by id
-        $landmarks = \App\Landmark::where('user_id','=',\Auth::id())->orderBy('user_id','DESC')->get();
-
-
-
+        // Sort in descending order by name
+        $landmarks = \App\Landmark::where('user_id','=',\Auth::id())->orderBy('id','DESC')->get();
         return view('landmarks.index')->with('landmarks',$landmarks);
 
         //return view('landmarks.list_all');

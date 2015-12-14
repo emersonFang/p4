@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome.index');
-});
-
+Route::get('/', 'WelcomeController@getIndex');
 
 if(App::environment('local')) {
 
