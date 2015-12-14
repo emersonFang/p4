@@ -109,7 +109,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/landmarks/delete/{id?}', 'LandmarkController@getDoDelete');
 
     Route::get('/landmarks', 'LandmarkController@getIndex');
-    Route::get('/landmarks/show/{name?}', 'LandmarkController@getShow');
+    Route::get('/landmarks/show/{id?}', 'LandmarkController@getShow');
 });
 
 Route::resource('tag', 'TagController');

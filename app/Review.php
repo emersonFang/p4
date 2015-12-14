@@ -13,4 +13,12 @@ class Review extends Model
 
 
     }
+
+    public function landmark()
+    {
+
+        return $this->belongsTo('Landmark');
+
+
+    }
 }

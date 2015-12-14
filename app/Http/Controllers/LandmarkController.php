@@ -30,8 +30,9 @@ class LandmarkController extends Controller {
     /**
      * Responds to requests to GET /landmarks/show/{id}
      */
-    public function getShow($name= null) {
-        return view('landmarks.show')->with('name',$name);
+    public function getShow($id= null) {
+
+        return view('landmarks.show')->with('id',$id);
     }
 
 
