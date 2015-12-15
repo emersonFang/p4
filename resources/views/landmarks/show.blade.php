@@ -56,9 +56,11 @@
                                     $user_name = $user->name;
                                 };?>
                             <div style="text-align: center" class="review_results_container">
+                                    <div class="align_left">
                                     {{$review->review}}
                                     <br>
                                     --{{$user_name}}
+                                    </div>
                             </div>
                         @endforeach
                 </div>
