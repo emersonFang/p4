@@ -109,7 +109,7 @@ class LandmarkController extends Controller {
      */
     public function getEdit($id = null) {
 
-        # Get this book and eager load its tags
+        # Get this landmark and eager load its tags
         $landmark = \App\Landmark::with('tags')->find($id);
 
         if(is_null($landmark)) {

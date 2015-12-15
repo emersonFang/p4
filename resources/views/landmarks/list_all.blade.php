@@ -16,13 +16,14 @@
         @foreach($landmarks as $landmark)
             <div style="text-align: center" class="user_results_container">
                 <h2>{{ $landmark->name }}</h2>
-                <a href='show/{{$landmark->id}}'>Reviews</a> |
+                <a href='show/{{$landmark->id}}'>About</a> |
                 <a href='/photos/{{$landmark->id}}'>Photos</a>
                 <br>
                 @if(Auth::check())
-                    <a href='/reviews/{{$landmark->id}}/create'>Create Review</a></li> |
+                    <a href='/reviews/{{$landmark->id}}/create'>Write Review</a></li> |
                     <a href='/photos/{{$landmark->id}}/create'>Upload Photos</a></li>
                 @endif
+                <br>
                 <div class="outer">
                     <?php $photos = \App\Photo::where('landmark_id','=',$landmark->id)->orderBy(DB::raw('RAND()'))->take(1)->get();
                     foreach($photos as $photo) {

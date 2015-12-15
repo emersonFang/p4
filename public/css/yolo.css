@@ -226,7 +226,12 @@ nav {
 }
 
 .centered_text {
-    text-align:center;
+    text-align: center;
+}
+
+.align_left {
+    display: inline-block;
+    text-align: left;
 }
 
 .no_bullets {

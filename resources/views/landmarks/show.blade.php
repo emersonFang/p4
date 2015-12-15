@@ -26,8 +26,18 @@
                     <img style='width:20%' src={{$filepath}}>
                 </div>
                 <div class="centered_text">
-                    Location: {{$landmark->location}} <br>
-                    Description: {{$landmark->description}}
+                    <div class="align_left">
+                        Location: {{$landmark->location}} <br>
+                        Description: {{$landmark->description}} <br>
+                        Tags:
+                            @if((count($landmark->tags))===0)
+                                {{' None'}}
+                            @else
+                                @foreach($landmark->tags as $tag)
+                                    {{$tag->tag.' '}}
+                                @endforeach
+                            @endif
+                    </div>
                 </div>
             <?php $reviews = \App\Review::where('landmark_id','=',$landmark->id)->orderBy('id')->get();?>
             @if(empty($reviews->first()))
