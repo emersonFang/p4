@@ -79,7 +79,8 @@ class PhotoController extends Controller {
         $this->validate(
             $request,
             [
-                'photo' => 'required|min:1',
+                'filepath' => 'required|url',
+                'photo_description' => 'required|min:1',
             ]
         );
 
@@ -87,7 +88,8 @@ class PhotoController extends Controller {
         $photo = new \App\Photo();
         $photo->landmark()->associate($landmark->id);
         $photo->user()->associate(\Auth::id()); # <--- NEW LINE
-        $photo->photo = $request->photo;
+        $photo->filepath = $request->filepath;
+        $photo->photo_description = $request->photo_description;
         $photo->save();
 
         # Done
@@ -122,7 +124,8 @@ class PhotoController extends Controller {
 
         $photo = \App\Photo::find($request->id);
 
-        $photo->photo = $request->photo;
+        $photo->filepath = $request->filepath;
+        $photo->photo_description = $request->photo_description;
         $photo->save();
 
         \Session::flash('flash_message','Your photo was updated.');
@@ -151,7 +154,7 @@ class PhotoController extends Controller {
 
         if(is_null($photo)) {
             \Session::flash('flash_message','photo not found.');
-            return redirect('\landmarks');
+            return redirect('\photos');
         }
 
         $photo->delete();
