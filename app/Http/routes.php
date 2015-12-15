@@ -125,6 +125,24 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::get('/reviews/show/{id}', 'ReviewController@getShow');
 
+
+    Route::get('/photos', 'PhotoController@getIndex');
+
+    Route::get('/photos/{id?}/create', 'PhotoController@getCreate');
+    Route::post('/photos/{id?}/create', 'PhotoController@postCreate');
+
+    Route::get('/photos/edit/{id?}', 'PhotoController@getEdit');
+    Route::post('/photos/edit/{id?}', 'PhotoController@postEdit');
+
+    Route::get('/photos/confirm-delete/{id?}', 'PhotoController@getConfirmDelete');
+    Route::get('/photos/delete/{id?}', 'PhotoController@getDoDelete');
+
+    Route::get('/photos/show/{id}', 'PhotoController@getShow');
+
+
+
+
+
 });
 
 Route::resource('tag', 'TagController');

@@ -51,7 +51,8 @@
                 <li><a href='/'>Home (View Your Landmarks)</a></li> ||
                 <li><a href='/landmarks/all'>View All Landmarks</a></li> ||
                 <li><a href='/landmarks/create'>Add a Landmark</a></li> ||
-                <li><a href='/reviews'>All Your Reviews</a></li>||
+                <li><a href='/reviews'>All Your Reviews</a></li> ||
+                <li><a href='/photos'>All Your Photos</a></li> ||
                 <li><a href='/logout'>Log out {{ $user->name }}</a></li>
             @else
                 <li><a href='/'>Home</a></li> ||
