@@ -7,7 +7,7 @@
 
 @section('content')
 
-    <h1>Delete Landmark</h1>
+    <h1>Delete Review</h1>
 
     <p>
         Are you sure you want to delete Review ID# <em>{{$review->id}}</em>?
