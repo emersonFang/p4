@@ -79,10 +79,9 @@ class ReviewController extends Controller {
 
         # Enter review
         $review = new \App\Review();
-        $review->review = $landmark->id;
+        $review->landmark()->associate($landmark->id);
+        $review->user()->associate(\Auth::id()); # <--- NEW LINE
         $review->review = $request->review;
-        $review->user_id = \Auth::id(); # <--- NEW LINE
-
         $review->save();
 
         # Done

@@ -9,7 +9,7 @@ class Photo extends Model
     public function user()
     {
 
-        return $this->belongsTo('User');
+        return $this->belongsTo('App\User');
 
 
     }
@@ -17,7 +17,7 @@ class Photo extends Model
     public function landmark()
     {
 
-        return $this->belongsTo('Landmark');
+        return $this->belongsTo('App\Landmark');
 
 
     }
