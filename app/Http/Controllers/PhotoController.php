@@ -21,11 +21,17 @@ class PhotoController extends Controller {
         return view('photos.index')->with('photos',$photos);
     }
 
-    /**
-    public function getAllphotos() {
-    return view('landmarks.list_all');
+
+    public function getAllphotos($id=null) {
+        $landmark = \App\Landmark::find($id);
+
+        if(is_null($landmark)) {
+            \Session::flash('flash_message','Landmark not found.');
+            return redirect('\landmarks');
+        }
+        return view('photos.list_all')->with('landmark',$landmark);
     }
-     */
+
 
     /**
      * Responds to requests to GET /photo/show/{id}, shows photos that are specific to the user for a specific landmark

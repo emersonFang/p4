@@ -127,6 +127,7 @@ Route::group(['middleware' => 'auth'], function() {
 
 
     Route::get('/photos', 'PhotoController@getIndex');
+    Route::get('/photos/{id?}', 'PhotoController@getAllPhotos');
 
     Route::get('/photos/{id?}/create', 'PhotoController@getCreate');
     Route::post('/photos/{id?}/create', 'PhotoController@postCreate');

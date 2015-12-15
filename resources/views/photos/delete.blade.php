@@ -9,8 +9,8 @@
 
     <h1>Delete photo</h1>
 
-    <div class="container">
-            {{$photo->photo}}
+    <div class="image">
+        <img style='width:30%' src={{$photo->filepath}}>
     </div>
 
     <p class="centered_text">

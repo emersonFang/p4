@@ -20,8 +20,7 @@
         @if(Auth::check())
             <a href='/photos'>All your photos</a> |
             <a href='/landmarks/show/{{$landmark->id}}'>All photos of {{$landmark->name}}</a> |
-            <a href='/photos/{{$landmark->id}}/create'>Add a photo</a> |
-            <a href='/photos/{{$landmark->id}}/create'>Add a photo</a>
+            <a href='/photos/{{$landmark->id}}/create'>Add a photo</a> of {{$landmark->name}}
         @else
         @endif
     </div>
@@ -35,7 +34,13 @@
         <h2>Your photos of {{$landmark->name}}</h2>
         <div class="container">
             @foreach($photos as $photo)
-                <div class="image">
+                <div class="user_results_container">
+                    <div class="centered_text">
+                        Photo ID# {{$photo->id}}
+                        <br>
+                        <a href='/photos/edit/{{$photo->id}}'>Edit</a> |
+                        <a href='/photos/confirm-delete/{{$photo->id}}'>Delete</a>
+                    </div>
                     <img style='width:100%' src={{$photo->filepath}}>
                 </div>
             @endforeach
