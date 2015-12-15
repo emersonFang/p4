@@ -15,13 +15,13 @@ the website's database, but not necessary to view the data.
 
 
 ## Details for the teaching team
-Login Required to add landmarks, photos, and reviews, but a guest can still view landmarks, photos, and reviews added by other users.
-*Login Option 1:
-    *Email: jill@harvard.edu
-    *Password: helloworld
-*Login Option 2:
-    *Email: jamal@harvard.edu
-    *Password: helloworld
+###Login Required to add landmarks, photos, and reviews, but a guest can still view landmarks, photos, and reviews added by other users.
+* Login Option 1:
+ * Email: jill@harvard.edu
+ * Password: helloworld
+* Login Option 2:
+ * Email: jamal@harvard.edu
+ * Password: helloworld
 
 The public/assets/ directory holds the CSS files for the views and the images that I used for the
 header.
@@ -32,9 +32,9 @@ header.
  * Bootstrap: http://maxcdn.bootsrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css
  * Bootstrap Theme: https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/readable/bootstrap.min.css
 * Logic
- * Based a good deal my code on Susan Buck's Foobooks Example App as far as routes, controllers, and views logic, and flash messages is concerned,
+ * Based a good deal of my code on Susan Buck's Foobooks Example App as far as routes, controllers, and views logic, and flash messages is concerned,
     but changed and added many details/complexities of my own.
-    *https://github.com/susanBuck/foobooks
+  * https://github.com/susanBuck/foobooks
  * Condition to randomly pick pictures: http://stackoverflow.com/questions/23456947/how-can-i-select-a-random-entry-from-a-database-using-laravel-4s-eloquent-orm
  * Rounded corners: http://stackoverflow.com/questions/6856711/css-rounded-corners-on-an-image-problem
 
