@@ -95,32 +95,16 @@ class ReviewController extends Controller {
      */
     public function getEdit($id = null) {
 
-        # Get this book and eager load its tags
-        $landmark = \App\Landmark::with('tags')->find($id);
+        $review = \App\Review::find($id);
 
-        if(is_null($landmark)) {
-            \Session::flash('flash_message','Landmark not found.');
-            return redirect('\landmarks');
+        if(is_null($review)) {
+            \Session::flash('flash_message','Review not found.');
+            return redirect('\reviews');
         }
 
-        # Get all the possible tags so we can include them with checkboxes in the view
-        $tagModel = new \App\Tag();
-        $tags_for_checkbox = $tagModel->getTagsForCheckboxes();
-
-        /*
-        Create a simple array of just the tag names for tags associated with this book;
-        will be used in the view to decide which tags should be checked off
-        */
-        $tags_for_this_landmark = [];
-        foreach($landmark->tags as $tag) {
-            $tags_for_this_landmark[] = $tag->tag;
-        }
-
-        return view('landmarks.edit')
+        return view('reviews.edit')
             ->with([
-                'landmark' => $landmark,
-                'tags_for_checkbox' => $tags_for_checkbox,
-                'tags_for_this_landmark' => $tags_for_this_landmark,
+                'review' => $review,
             ]);
 
     }
@@ -130,23 +114,13 @@ class ReviewController extends Controller {
      */
     public function postEdit(Request $request) {
 
-        $landmark = \App\Landmark::find($request->id);
+        $review = \App\Review::find($request->id);
 
-        $landmark->name = $request->name;
-        $landmark->description = $request->description;
-        $landmark->location = $request->location;
-        $landmark->save();
+        $review->review = $request->review;
+        $review->save();
 
-        if($request->tags) {
-            $tags = $request->tags;
-        }
-        else {
-            $tags = [];
-        }
-        $landmark->tags()->sync($tags);
-
-        \Session::flash('flash_message','Your landmark was updated.');
-        return redirect('/landmarks/edit/'.$request->id);
+        \Session::flash('flash_message','Your review was updated.');
+        return redirect('/reviews/edit/'.$request->id);
 
     }
 
