@@ -42,60 +42,52 @@ class ReviewController extends Controller {
 
 
     /**
-     * Responds to requests to GET /reviews/create
+     * Responds to requests to GET /reviews/{id}/create, where {id} is the id of the landmark that a review is being created for
      */
-    public function getCreate() {
+    public function getCreate($id= null) {
 
-        $LandmarkModel = new \App\Landmark();
+        $ReviewModel = new \App\Review();
+        $landmark = \App\Landmark::find($id);
 
-        return view('reviews.create');
+        if(is_null($landmark)) {
+            \Session::flash('flash_message','Landmark not found.');
+            return redirect('\landmarks');
+        }
+
+        return view('reviews.create')->with('landmark',$landmark);
     }
 
     /**
-     * Responds to requests to POST /reviews/create
+     * Responds to requests to POST /reviews/{id}/create
      */
-    public function postCreate(Request $request)
+    public function postCreate(Request $request,$id= null)
     {
+
+        $landmark = \App\Landmark::find($id);
+
+        if(is_null($landmark)) {
+            \Session::flash('flash_message','Landmark not found.');
+            return redirect('\landmarks');
+        }
 
         $this->validate(
             $request,
             [
-                'name' => 'required|min:5',
-                'description' => 'required|min:1',
-                'location' => 'required|min:1',
-                'filepath' => 'required|url',
-                'photo_description' => 'required|min:1'
+                'review' => 'required|min:1',
             ]
         );
 
-        # Enter landmark and its photo into the database
-        $landmark = new \App\Landmark();
-        $landmark->name = $request->name;
-        $landmark->description = $request->description;
-        $landmark->location = $request->location;
-        $landmark->user_id = \Auth::id(); # <--- NEW LINE
+        # Enter review
+        $review = new \App\Review();
+        $review->review = $landmark->id;
+        $review->review = $request->review;
+        $review->user_id = \Auth::id(); # <--- NEW LINE
 
-        $landmark->save();
-
-        $photo = new \App\Photo();
-        $photo->filepath = $request->filepath;
-        $photo->photo_description = $request->photo_description;
-        $photo->landmark_id = $landmark->id;
-        $photo->user_id = \Auth::id();
-
-        $photo->save();
-
-        # Add the tags
-        if ($request->tags) {
-            $tags = $request->tags;
-        } else {
-            $tags = [];
-        }
-        $landmark->tags()->sync($tags);
+        $review->save();
 
         # Done
-        \Session::flash('flash_message', 'Your landmark was added!');
-        return redirect('/landmarks');
+        \Session::flash('flash_message', 'Your review was added!');
+        return redirect('/reviews');
 
     }
 
