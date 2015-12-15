@@ -19,21 +19,27 @@ such as a page specific styesheets.
 @section('content')
 
     <div class="form_container">
-        <h1>Add a new photo</h1>
+        <h1>Add a new photo of</h1>
+        <h2>{{$landmark->name}}</h2>
 
         @include('errors')
+
+        <br>
 
         <form method='POST' action='/photos/{{$landmark->id}}/create'>
 
             <input type='hidden' value='{{ csrf_token() }}' name='_token'>
 
             <div class='form-group'>
-                <label>*Photo:</label>
+                <label>*Photo URL:</label>
                 <input type="url"
                         id='filepath'
                         name='filepath'
+                        style='width:700px'
                         value='http://www.nationsonline.org/gallery/Monuments/Sphinx_und_Chephren-Pyramid.jpg'>
                 </input>
+                <br>
+                <label>*Photo Description</label>
                 <input type="text"
                        id='photo_description'
                        name='photo_description'
