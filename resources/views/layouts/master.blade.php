@@ -49,9 +49,9 @@
         <ul class="no_bullets">
             @if(Auth::check())
                 <li><a href='/'>Home (View Your Landmarks)</a></li> ||
-                <li><a href='/landmarks/all'>View all users' landmarks</a></li> ||
-                <li><a href='/landmarks/create'>Add a landmark</a></li> ||
-                <li><a href='/reviews'>All your reviews</a></li>||
+                <li><a href='/landmarks/all'>View All Landmarks</a></li> ||
+                <li><a href='/landmarks/create'>Add a Landmark</a></li> ||
+                <li><a href='/reviews'>All Your Reviews</a></li>||
                 <li><a href='/logout'>Log out {{ $user->name }}</a></li>
             @else
                 <li><a href='/'>Home</a></li> ||

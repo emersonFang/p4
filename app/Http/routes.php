@@ -118,7 +118,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('/reviews/{id?}/create', 'ReviewController@postCreate');
 
     Route::get('/reviews/edit/{id?}', 'ReviewController@getEdit');
-    Route::post('/reviews/edit', 'ReviewController@postEdit');
+    Route::post('/reviews/edit/{id?}', 'ReviewController@postEdit');
 
     Route::get('/reviews/confirm-delete/{id?}', 'ReviewController@getConfirmDelete');
     Route::get('/reviews/delete/{id?}', 'ReviewController@getDoDelete');

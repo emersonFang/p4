@@ -24,8 +24,7 @@
                         id='review'
                         name='review'
                         rows="4" cols="50"
-                        placeholder="This landmark isn't so great after all.  I changed my mind."
-                        >
+                        >{{$review->review}}
                 </textarea>
                 <br>
                 <button type="submit" class="btn btn-primary">Save changes</button>

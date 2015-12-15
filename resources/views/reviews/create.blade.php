@@ -34,7 +34,7 @@ such as a page specific styesheets.
                         name='review'
                         rows="4" cols="50"
                         placeholder="The best landmark ever!!"
-                        >
+                        >The best-est landmark ever!!
                 </textarea>
             </div>
 
