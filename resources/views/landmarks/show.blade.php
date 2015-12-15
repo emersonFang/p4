@@ -23,7 +23,7 @@
                     @endif
                 </div>
                 <div class="image">
-                    <img style='width:20%' src={{$filepath}}>
+                    <img class="image" style='width:20%' src={{$filepath}}>
                 </div>
                 <div class="centered_text">
                     <div class="align_left">

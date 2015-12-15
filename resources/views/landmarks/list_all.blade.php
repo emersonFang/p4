@@ -30,7 +30,7 @@
                         $filepath = $photo['filepath'];
                     };?>
                     <div class="image">
-                        <img style='width:100%' src={{$filepath}}>
+                        <img class="image" style='width:100%' src={{$filepath}}>
                     </div>
                 </div>
             </div>

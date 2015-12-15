@@ -1,27 +1,43 @@
-## Laravel PHP Framework
+# Ye Olde Landmark-lover's Order (Y.O.L.O.) App
+by Emerson Fang
+12/15/2015
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+## Live URL
+<http://p4.emersonfang.me>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+## Description
+My vision for the "Y.O.L.O" App is a web-site where users can upload landmarks they like or have visited and write short informative
+descriptions of the landmark, add URL's of photos (ideally of the landmark), and also write reviews about the landmark.
+Guests and other users can view the landmarks, photos, and reviews that users have posted.  Registration is required to interact with
+the website's database, but not necessary to view the data.
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+## Demo
 
-## Official Documentation
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+## Details for the teaching team
+Login Required to add landmarks, photos, and reviews, but a guest can still view landmarks, photos, and reviews added by other users.
+*Login Option 1:
+    *Email: jill@harvard.edu
+    *Password: helloworld
+*Login Option 2:
+    *Email: jamal@harvard.edu
+    *Password: helloworld
 
-## Contributing
+The public/assets/ directory holds the CSS files for the views and the images that I used for the
+header.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+## Outside code
+* External Stylesheets
+ * Maybe this is redundant?: http://yui.yahooapis.com/pure/0.6.0/pure-min.css
+ * Bootstrap: http://maxcdn.bootsrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css
+ * Bootstrap Theme: https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/readable/bootstrap.min.css
+* Logic
+ * Based a good deal my code on Susan Buck's Foobooks Example App as far as routes, controllers, and views logic, and flash messages is concerned,
+    but changed and added many details/complexities of my own.
+    *https://github.com/susanBuck/foobooks
+ * Condition to randomly pick pictures: http://stackoverflow.com/questions/23456947/how-can-i-select-a-random-entry-from-a-database-using-laravel-4s-eloquent-orm
+ * Rounded corners: http://stackoverflow.com/questions/6856711/css-rounded-corners-on-an-image-problem
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-### License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+* Styling
+ * Header shadow: http://answers.squarespace.com/questions/2750/drop-shadow-on-header-menu-what-css-is-required
+ * Box shadow: http://www.w3schools.com/cssref/css3_pr_box-shadow.asp
