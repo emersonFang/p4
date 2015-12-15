@@ -19,13 +19,17 @@
             <input type='hidden' name='id' value='{{ $photo->id }}'>
 
             <div class='form-group'>
-                <label>* photo:</label>
-                <textarea
-                        id='photo'
-                        name='photo'
-                        rows="4" cols="50"
-                        >{{$photo->photo}}
-                </textarea>
+                <label>*Photo:</label>
+                <input type="url"
+                       id='filepath'
+                       name='filepath'
+                       value={{$photo->filepath}}>
+                </input>
+                <input type="text"
+                       id='photo_description'
+                       name='photo_description'
+                       value={{$photo->photo_description}}>
+                </input>
                 <br>
                 <button type="submit" class="btn btn-primary">Save changes</button>
             </div>

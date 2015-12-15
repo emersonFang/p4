@@ -4,7 +4,7 @@
 @extends('layouts.master')
 
 @section('title')
-    <title>Show User's photos of Landmark</title>
+    <title>Show User's Photos of {{$landmark->name}}</title>
 @stop
 
 @section('content')
@@ -35,8 +35,8 @@
         <h2>Your photos of {{$landmark->name}}</h2>
         <div class="container">
             @foreach($photos as $photo)
-                <div class="photo_results_container">
-                {{$photo->photo}}
+                <div class="image">
+                    <img style='width:100%' src={{$photo->filepath}}>
                 </div>
             @endforeach
         </div>

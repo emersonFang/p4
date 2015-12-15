@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    All Your photos
+    All Your Photos
 @stop
 
 @section('content')
@@ -15,14 +15,16 @@
                     ->where('id', '=',$photo->landmark_id)->value('name');
                 ?>
                 <div style="text-align: center" class="user_results_container">
-                    <h2>photo of {{$landmark_name}}</h2>
+                    <h2>Photo of {{$landmark_name}}</h2>
                     (photo ID #: {{$photo->id}})
                     <br>
                     <br>
                     <a href='/photos/edit/{{$photo->id}}'>Edit</a> |
                     <a href='/photos/confirm-delete/{{$photo->id}}'>Delete</a>
                     <br><br>
-                    {{$photo->photo}}
+                    <div class="image">
+                        <img style='width:100%' src={{$photo->filepath}}>
+                    </div>
                 </div>
             @endforeach
         @endif

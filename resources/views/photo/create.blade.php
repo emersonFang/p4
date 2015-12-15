@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Create photo
+    Create Photo
 @stop
 
 
@@ -28,17 +28,21 @@ such as a page specific styesheets.
             <input type='hidden' value='{{ csrf_token() }}' name='_token'>
 
             <div class='form-group'>
-                <label>*photo:</label>
-                <textarea
-                        id='photo'
-                        name='photo'
-                        rows="4" cols="50"
-                        placeholder="The best landmark ever!!"
-                        >The best-est landmark ever!!
-                </textarea>
+                <label>*Photo:</label>
+                <input type="url"
+                        id='filepath'
+                        name='filepath'
+                        value='http://www.nationsonline.org/gallery/Monuments/Sphinx_und_Chephren-Pyramid.jpg'>
+                </input>
+                <input type="text"
+                       id='photo_description'
+                       name='photo_description'
+                       value='generic photo'>
+                </input>
+
             </div>
 
-            <button type="submit" class="btn btn-primary">Add photo</button>
+            <button type="submit" class="btn btn-primary">Add Photo</button>
         </form>
     </div>
 @stop
