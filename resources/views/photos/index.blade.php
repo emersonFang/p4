@@ -8,6 +8,7 @@
     <div class="container">
         @if(sizeof($photos) == 0)
             You have not added any photos.
+            Why don't you <a href="/landmarks/all">choose a landmark</a> to upload photos for?
         @else
             <h2>Your Photos</h2>
             @foreach($photos as $photo)

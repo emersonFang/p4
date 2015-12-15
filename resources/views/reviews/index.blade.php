@@ -7,7 +7,8 @@
 @section('content')
     <div class="container">
         @if(sizeof($reviews) == 0)
-            You have not added any reviews.
+            You have not added any reviews.<br>
+            Why don't you <a href="/landmarks/all">visit a landmark</a> and write a review for it?
         @else
             @foreach($reviews as $review)
                 <?php
