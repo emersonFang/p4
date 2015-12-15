@@ -136,7 +136,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
+        Illuminate\Html\HtmlServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -198,6 +198,9 @@ return [
 
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Random'    => 'Rych\Random\Random',
+
+        'Form'=> 'Illuminate\Html\FormFacade',
+        'HTML'=> 'Illuminate\Html\HtmlFacade'
 
     ],
 

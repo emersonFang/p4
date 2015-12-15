@@ -62,6 +62,8 @@
                 <li><a href='/register'>Register</a></li>
             @endif
         </ul>
+        <?php $landmarks = ['' => ''] + \App\Landmark::lists('name', 'id')->toArray();?>
+        {{ Form::select('landmark', $landmarks) }}
     </nav>
 
     <section>
