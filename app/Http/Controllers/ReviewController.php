@@ -152,7 +152,7 @@ class ReviewController extends Controller {
 
         \Session::flash('flash_message',$review->id.' was deleted.');
 
-        return redirect('/landmarks');
+        return redirect('/reviews');
 
     }
 
