@@ -9,6 +9,9 @@
     <h1>All of Your Landmarks</h1>
     @if(sizeof($landmarks) == 0)
         You have not added any landmarks.
+        <div class="centered_text">
+            <a href="/landmark/create" class="centered_text">Add </a>a landmark?
+        </div>
     @else
         @foreach($landmarks as $landmark)
             <div style="text-align: center" class="user_results_container">
