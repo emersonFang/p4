@@ -22,4 +22,8 @@ class Landmark extends Model
         return $this->hasMany('App\Review');
     }
 
+    public function photo() {
+        return $this->hasMany('App\Photo');
+    }
+
 }
