@@ -42,9 +42,11 @@
             <?php $reviews = \App\Review::where('landmark_id','=',$landmark->id)->orderBy('id')->get();?>
             @if(empty($reviews->first()))
                 <h2>No Reviews (Yet!)...</h2>
-                <div class="centered_text">
-                    <a href="/reviews/{{$landmark->id}}/create" class="centered_text">Add </a>a review?
-                </div>
+                @if(Auth::check())
+                    <div class="centered_text">
+                        <a href="/reviews/{{$landmark->id}}/create" class="centered_text">Add </a>a review?
+                    </div>
+                @endif
             @else
                 <h2>Reviews:</h2>
                 <div class="container">

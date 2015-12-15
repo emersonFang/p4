@@ -109,10 +109,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/landmarks/delete/{id?}', 'LandmarkController@getDoDelete');
 
     Route::get('/landmarks', 'LandmarkController@getIndex');
-    Route::get('/landmarks/show/{id?}', 'LandmarkController@getShow');
     Route::post('/landmarks/show/{id?}', 'LandmarkController@getShow');
-
-    Route::get('/reviews', 'ReviewController@getIndex');
 
     Route::get('/reviews/{id?}/create', 'ReviewController@getCreate');
     Route::post('/reviews/{id?}/create', 'ReviewController@postCreate');
@@ -123,12 +120,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/reviews/confirm-delete/{id?}', 'ReviewController@getConfirmDelete');
     Route::get('/reviews/delete/{id?}', 'ReviewController@getDoDelete');
 
-    Route::get('/reviews/show/{id}', 'ReviewController@getShow');
-
-
-    Route::get('/photos', 'PhotoController@getIndex');
-    Route::get('/photos/{id?}', 'PhotoController@getAllPhotos');
-
+    Route::get('/reviews', 'ReviewController@getIndex');
     Route::get('/photos/{id?}/create', 'PhotoController@getCreate');
     Route::post('/photos/{id?}/create', 'PhotoController@postCreate');
 
@@ -140,14 +132,14 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::get('/photos/show/{id}', 'PhotoController@getShow');
 
-
-
-
+    Route::get('/photos', 'PhotoController@getIndex');
+    Route::get('/reviews/show/{id}', 'ReviewController@getShow');
 
 });
 
 Route::resource('tag', 'TagController');
-
+Route::get('/landmarks/show/{id?}', 'LandmarkController@getShow');
 Route::get('/landmarks/all', 'LandmarkController@getAllLandmarks');
+Route::get('/photos/{id?}', 'PhotoController@getAllPhotos');
 
 ?>

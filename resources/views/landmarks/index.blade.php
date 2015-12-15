@@ -16,9 +16,10 @@
         @foreach($landmarks as $landmark)
             <div style="text-align: center" class="user_results_container">
                 <h2>{{ $landmark->name }}</h2>
-                <a href='landmarks/show/{{$landmark->id}}'>About</a> |
+                <a href='landmarks/show/{{$landmark->id}}'>About</a> @if(Auth::check())|
                 <a href='/landmarks/edit/{{$landmark->id}}'>Edit</a> |
                 <a href='/landmarks/confirm-delete/{{$landmark->id}}'>Delete</a>
+                @endif
                 <div class="outer">
                     <?php $photos = \App\Photo::where('landmark_id','=',$landmark->id)->orderBy(DB::raw('RAND()'))->take(1)->get();
                     foreach($photos as $photo) {
