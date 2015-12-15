@@ -9,11 +9,11 @@
 
     <h1>Delete Landmark</h1>
 
-    <p>
+    <p class="centered_text">
         Are you sure you want to delete <em>{{$landmark->name}}</em>?
     </p>
 
-    <p>
+    <p class="centered_text">
         <a href='/landmarks/delete/{{$landmark->id}}'>Yes...</a>
     </p>
 

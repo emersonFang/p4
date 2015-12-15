@@ -2,86 +2,159 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+class PhotoController extends Controller {
 
-class PhotoController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+    public function __construct() {
+        # Put anything here that should happen before any of the other actions
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Responds to requests to GET /photos, shows all of a user's photos
      */
-    public function create()
-    {
-        //
+    public function getIndex() {
+        // Get all the photos "owned" by the current logged in user
+        // Sort in descending order by id
+        $photos = \App\Photo::where('user_id','=',\Auth::id())->orderBy('id','DESC')->get();
+        return view('photos.index')->with('photos',$photos);
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+    public function getAllphotos() {
+    return view('landmarks.list_all');
+    }
      */
-    public function store(Request $request)
-    {
-        //
+
+    /**
+     * Responds to requests to GET /photo/show/{id}, shows photos that are specific to the user for a specific landmark
+     */
+    public function getShow($id= null) {
+        $landmark = \App\Landmark::find($id);
+
+        if(is_null($landmark)) {
+            \Session::flash('flash_message','Landmark not found.');
+            return redirect('\landmarks');
+        }
+        return view('photos.show')->with('landmark',$landmark);
+    }
+
+
+    /**
+     * Responds to requests to GET /photos/{id}/create, where {id} is the id of the landmark that a photo is being created for
+     */
+    public function getCreate($id= null) {
+
+        $photoModel = new \App\Photo();
+        $landmark = \App\Landmark::find($id);
+
+        if(is_null($landmark)) {
+            \Session::flash('flash_message','Landmark not found.');
+            return redirect('\landmarks');
+        }
+
+        return view('photos.create')->with('landmark',$landmark);
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Responds to requests to POST /photos/{id}/create
      */
-    public function show($id)
+    public function postCreate(Request $request,$id= null)
     {
-        //
+
+        $landmark = \App\Landmark::find($id);
+
+        if(is_null($landmark)) {
+            \Session::flash('flash_message','Landmark not found.');
+            return redirect('\landmarks');
+        }
+
+        $this->validate(
+            $request,
+            [
+                'photo' => 'required|min:1',
+            ]
+        );
+
+        # Enter photo
+        $photo = new \App\Photo();
+        $photo->landmark()->associate($landmark->id);
+        $photo->user()->associate(\Auth::id()); # <--- NEW LINE
+        $photo->photo = $request->photo;
+        $photo->save();
+
+        # Done
+        \Session::flash('flash_message', 'Your photo was added!');
+        return redirect('/photos');
+
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Responds to requests to GET /photos/edit/{$id}
      */
-    public function edit($id)
-    {
-        //
+    public function getEdit($id = null) {
+
+        $photo = \App\Photo::find($id);
+
+        if(is_null($photo)) {
+            \Session::flash('flash_message','photo not found.');
+            return redirect('\photos');
+        }
+
+        return view('photos.edit')
+            ->with([
+                'photo' => $photo,
+            ]);
+
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Responds to requests to POST /photos/edit
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function postEdit(Request $request) {
+
+        $photo = \App\Photo::find($request->id);
+
+        $photo->photo = $request->photo;
+        $photo->save();
+
+        \Session::flash('flash_message','Your photo was updated.');
+        return redirect('/photos/edit/'.$request->id);
+
+    }
+
+
+
+    /**
+     *
+     */
+    public function getConfirmDelete($photo_id) {
+
+        $photo = \App\Photo::find($photo_id);
+
+        return view('photos.delete')->with('photo', $photo);
     }
 
     /**
-     * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function getDoDelete($photo_id) {
+
+        $photo = \App\Landmark::find($photo_id);
+
+        if(is_null($photo)) {
+            \Session::flash('flash_message','photo not found.');
+            return redirect('\landmarks');
+        }
+
+        $photo->delete();
+
+        \Session::flash('flash_message',$photo->id.' was deleted.');
+
+        return redirect('/photos');
+
     }
+
+
 }

@@ -9,11 +9,15 @@
 
     <h1>Delete Review</h1>
 
-    <p>
+    <div class="container">
+            {{$review->review}}
+    </div>
+
+    <p class="centered_text">
         Are you sure you want to delete Review ID# <em>{{$review->id}}</em>?
     </p>
 
-    <p>
+    <p class="centered_text">
         <a href='/landmarks/delete/{{$review->id}}'>Yes...</a>
     </p>
 
