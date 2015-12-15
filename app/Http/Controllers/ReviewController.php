@@ -17,10 +17,8 @@ class ReviewController extends Controller {
     public function getIndex() {
         // Get all the reviews "owned" by the current logged in user
         // Sort in descending order by id
-        $landmarks = \App\Landmark::where('user_id','=',\Auth::id())->orderBy('id','DESC')->get();
-        return view('reviews.index')->with('landmarks',$landmarks);
-
-        //return view('landmarks.list_all');
+        $reviews = \App\Review::where('user_id','=',\Auth::id())->orderBy('id','DESC')->get();
+        return view('reviews.index')->with('reviews',$reviews);
     }
 
     /**

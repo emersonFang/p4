@@ -112,6 +112,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/landmarks/show/{id?}', 'LandmarkController@getShow');
     Route::post('/landmarks/show/{id?}', 'LandmarkController@getShow');
 
+    Route::get('/reviews', 'ReviewController@getIndex');
+
     Route::get('/reviews/{id?}/create', 'ReviewController@getCreate');
     Route::post('/reviews/{id?}/create', 'ReviewController@postCreate');
 
