@@ -62,19 +62,6 @@
                 <li><a href='/register'>Register</a></li>
             @endif
         </ul>
-        <?php $landmarks = ['' => ''] + \App\Landmark::lists('name', 'id')->toArray();?>
-        Select a Landmark to View:
-        <form action="/landmarks/show/<?php
-        if (empty($_POST)){
-        }else {
-            echo htmlspecialchars($_POST["landmark"]);
-            }
-        ?>" method="post" name="form" id="form">
-            <input type='hidden' value='{{ csrf_token() }}' name='_token'>
-            <input type='hidden' value='landmark' name='landmark'>
-            {!!Form::select('landmark', $landmarks)!!}
-            <button type="submit" class="btn btn-primary">View Landmark</button>
-        </form>
 
     </nav>
 
