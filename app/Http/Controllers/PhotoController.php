@@ -150,16 +150,16 @@ class PhotoController extends Controller {
      */
     public function getDoDelete($photo_id) {
 
-        $photo = \App\Landmark::find($photo_id);
+        $photo = \App\Photo::find($photo_id);
 
         if(is_null($photo)) {
-            \Session::flash('flash_message','photo not found.');
+            \Session::flash('flash_message','Photo not found.');
             return redirect('\photos');
         }
 
         $photo->delete();
 
-        \Session::flash('flash_message',$photo->id.' was deleted.');
+        \Session::flash('flash_message','Photo #'.$photo->id.' was deleted.');
 
         return redirect('/photos');
 

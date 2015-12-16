@@ -141,7 +141,7 @@ class ReviewController extends Controller {
      */
     public function getDoDelete($review_id) {
 
-        $review = \App\Landmark::find($review_id);
+        $review = \App\Review::find($review_id);
 
         if(is_null($review)) {
             \Session::flash('flash_message','Review not found.');
@@ -150,7 +150,7 @@ class ReviewController extends Controller {
 
         $review->delete();
 
-        \Session::flash('flash_message',$review->id.' was deleted.');
+        \Session::flash('flash_message','Review #'.$review->id.' was deleted.');
 
         return redirect('/reviews');
 
