@@ -18,7 +18,7 @@
     </p>
 
     <p class="centered_text">
-        <a href='/landmarks/delete/{{$review->id}}'>Yes...</a>
+        <a href='/reviews/delete/{{$review->id}}'>Yes...</a>
     </p>
 
 @stop
