@@ -142,6 +142,12 @@ class PhotoController extends Controller {
 
         $photo = \App\Photo::find($photo_id);
 
+        $count = \App\Photo::where('landmark_id','=',$photo->landmark_id)->count();
+        if($count==1) {
+            \Session::flash('flash_message','This is the last photo of the landmark.  We can\'t delete the last photo!');
+            return redirect('\photos');
+        }
+
         return view('photos.delete')->with('photo', $photo);
     }
 

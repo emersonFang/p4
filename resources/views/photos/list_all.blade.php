@@ -29,6 +29,8 @@
                 <h2>Photo ID#: {{ $photo->id }}</h2>
                 <div class="centered_text">Uploaded by {{$user_name}}</div>
                 <br>
+                <div class="centered_text">"Description: {{$photo->photo_description}}</div>
+                <br>
                 <div class="outer">
                     <div class="image">
                         <img style='width:100%' src={{$photo->filepath}}>

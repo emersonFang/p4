@@ -24,6 +24,8 @@
                     <a href='/photos/edit/{{$photo->id}}'>Edit</a> |
                     <a href='/photos/confirm-delete/{{$photo->id}}'>Delete</a>
                     <br><br>
+                    Description: {{$photo->photo_description}}
+                    <br><br>
                     <div class="image">
                         <img style='width:100%' src={{$photo->filepath}}>
                     </div>
