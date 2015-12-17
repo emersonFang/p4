@@ -12,7 +12,7 @@ Guests and other users can view the landmarks, photos, and reviews that users ha
 the website's database, but not necessary to view the data.
 
 ## Demo
-
+<http://screencast.com/t/CkYETul0>
 
 ## Details for the teaching team
 ###Login Required to add landmarks, photos, and reviews, but a guest can still view landmarks, photos, and reviews added by other users.

@@ -76,6 +76,11 @@ class PhotoController extends Controller {
             return redirect('\landmarks');
         }
 
+        if (\App\Photo::where('filepath', '=', $request->filepath)->exists()) {
+            \Session::flash('flash_message','A Photo with that URL already exists in our database.');
+            return redirect('/photos/'.$id);
+        }
+
         $this->validate(
             $request,
             [
@@ -94,7 +99,7 @@ class PhotoController extends Controller {
 
         # Done
         \Session::flash('flash_message', 'Your photo was added!');
-        return redirect('/photos');
+        return redirect('/photos/'.$id);
 
     }
 

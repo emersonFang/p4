@@ -81,7 +81,7 @@ such as a page specific styesheets.
                 <label for='tags'>Tags</label>
                 <br>
                 @foreach($tags_for_checkbox as $tag_id => $tag)
-                    <input type='checkbox' tag='tags[]' value='{{$tag_id}}'> {{ $tag['tag'] }}<br>
+                    <input type='checkbox' name='tags[]' value='{{$tag_id}}'> {{ $tag['tag'] }}<br>
                 @endforeach
             </div>
 

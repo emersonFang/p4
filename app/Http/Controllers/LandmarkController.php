@@ -46,7 +46,7 @@ class LandmarkController extends Controller {
      */
     public function getCreate() {
 
-        $LandmarkModel = new \App\Landmark();
+
 
         # Get all the possible tags so we can include them with checkboxes in the view
         $tagModel = new \App\Tag();
@@ -61,6 +61,11 @@ class LandmarkController extends Controller {
      */
     public function postCreate(Request $request)
     {
+
+        if (\App\Landmark::where('name', '=', $request->name)->exists()) {
+            \Session::flash('flash_message','A Landmark with that name already exists.');
+            return redirect('\landmarks');
+        }
 
         $this->validate(
             $request,
@@ -91,13 +96,13 @@ class LandmarkController extends Controller {
         $photo->save();
 
         # Add the tags
+        $request->tags;
         if ($request->tags) {
             $tags = $request->tags;
         } else {
             $tags = [];
         }
         $landmark->tags()->sync($tags);
-
         # Done
         \Session::flash('flash_message', 'Your landmark was added!');
         return redirect('/landmarks');
@@ -122,13 +127,14 @@ class LandmarkController extends Controller {
         $tags_for_checkbox = $tagModel->getTagsForCheckboxes();
 
         /*
-        Create a simple array of just the tag names for tags associated with this book;
+        Create a simple array of just the tag names for tags associated with this landmark;
         will be used in the view to decide which tags should be checked off
         */
         $tags_for_this_landmark = [];
         foreach($landmark->tags as $tag) {
             $tags_for_this_landmark[] = $tag->tag;
         }
+        $landmark->save();
 
         return view('landmarks.edit')
             ->with([
@@ -136,7 +142,6 @@ class LandmarkController extends Controller {
                 'tags_for_checkbox' => $tags_for_checkbox,
                 'tags_for_this_landmark' => $tags_for_this_landmark,
             ]);
-
     }
 
     /**
