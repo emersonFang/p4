@@ -3,7 +3,7 @@ by Emerson Fang
 12/15/2015
 
 ## Live URL
-<http://p4.emersonfang.me>
+~~<http://p4.emersonfang.me>~~
 
 ## Description
 My vision for the "Y.O.L.O" App is a web-site where users can upload landmarks they like or have visited and write short informative
